@@ -143,6 +143,7 @@ vite.config.ts.timestamp-*
 **/.terraform/*
 *.tfstate
 *.tfstate.*
+.terraform.lock.hcl
 **/.terraform.lock.hcl
 **/terraform.tfstate
 **/terraform.tfstate.*
@@ -153,3 +154,14 @@ override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
+# Terraform State/Lock files
+**/.terraform.lock.hcl
+**/errored.tfstate
+# Terraform files to ignore
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+#KARAN
+gpt-prompt.txt

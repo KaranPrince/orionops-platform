@@ -1,12 +1,19 @@
-# envs/dev/outputs.tf
-
-output "bastion_public_ip" {
-  description = "The Public IP address for the Bastion Host"
-  # CORRECTED: Must use the full output name "bastion_public_ip" from the module
-  value = module.bastion.bastion_public_ip
+output "vpc_id" {
+  value = module.vpc.vpc_id
 }
 
-# You should also check for and update the security group ID if you output it here:
-# output "bastion_security_group_id" {
-#   value = module.bastion.sg_id # Assuming you named the internal output 'sg_id'
+output "eks_cluster_name" {
+  value = module.eks.cluster_name
+}
+
+output "eks_cluster_endpoint" {
+  value = module.eks.cluster_endpoint
+}
+
+output "bastion_public_ip" {
+  value = module.bastion.public_ip
+}
+
+# output "sample_app_url" {
+#   value = "http://${kubernetes_service.sample-app-service.status[0].load_balancer[0].ingress[0].hostname}"
 # }
